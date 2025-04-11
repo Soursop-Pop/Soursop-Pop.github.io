@@ -1,145 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Press Kit - [RhodesTrip]</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press Kit - Your Organization</title>
   <style>
     /* Basic Reset */
-    body, h1, h2, h3, p, ul, li, a {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
-      line-height: 1.6;
+      background-color: #f4f4f4;
       color: #333;
-      padding: 20px;
     }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    header, section, footer {
-      margin-bottom: 40px;
-    }
+    /* Header / Logo */
     header {
+      background-color: #222;
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #ddd;
+    }
+    header img {
+      max-width: 150px;
+      display: block;
+      margin: 0 auto 20px auto;
     }
     header h1 {
+      font-size: 2em;
       margin-bottom: 10px;
     }
-    .logo {
-      display: block;
-      margin: 20px auto;
-      max-width: 200px;
+    header p {
+      font-size: 1.1em;
     }
-    h2 {
-      margin-top: 20px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
+
+    /* Container for Sidebar + Main Content */
+    .content-wrapper {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      gap: 20px;
     }
-    ul {
+
+    /* Sidebar */
+    .sidebar {
+      flex: 0 0 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      height: fit-content; /* So it doesn't stretch to full page height */
+    }
+    .sidebar h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .sidebar ul {
       list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      margin-bottom: 10px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .press-assets img {
-      max-width: 100%;
-      height: auto;
-      display: block;
       margin-top: 10px;
     }
-    .contact-info p {
+    .sidebar li {
+      margin-bottom: 8px;
+    }
+    .sidebar li a {
+      color: #333;
+      text-decoration: none;
+    }
+    .sidebar li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    .main-content h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+    .main-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+    .main-content h3 {
+      margin-top: 30px;
       margin-bottom: 10px;
     }
+
+    /* Image Gallery */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: calc(33% - 10px); /* 3 images per row, minus spacing */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    @media (max-width: 768px) {
+      /* Make gallery single or double column on smaller screens */
+      .gallery img {
+        width: calc(50% - 10px);
+      }
+    }
+    @media (max-width: 480px) {
+      .gallery img {
+        width: 100%;
+      }
+    }
+
+    /* Footer */
     footer {
       text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #fff;
+      margin-top: 40px;
+    }
+    footer p {
       font-size: 0.9em;
-      color: #777;
-      border-top: 2px solid #ddd;
-      padding-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header Section -->
-    <header>
-      <img src="path-to-your-logo.png" alt="[Your Organization] Logo" class="logo">
-      <h1>[RhodesTrip]</h1>
-      <p>Press Kit</p>
-    </header>
+  <!-- Header / Logo -->
+  <header>
+    <img src="img/your-logo.png" alt="Your Organization Logo" />
+    <h1>Your Organization</h1>
+    <p>Press Kit and Media Resources</p>
+  </header>
 
-    <!-- Overview Section -->
-    <section id="overview">
-      <h2>Overview</h2>
-      <p>RhodesTrip is a third-person narrative game about driving, talking, and listening to music on a road trip back home. Meet quirky characters as you journey through beautiful biomes and reminisce about the things we miss.</p>
-    </section>
-
-    <!-- Press Releases Section -->
-    <section id="press-releases">
-      <h2>Press Releases</h2>
+  <!-- Two-column layout -->
+  <div class="content-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <h2>Navigate</h2>
       <ul>
-        <li>
-          <a href="link-to-press-release-1.pdf" target="_blank">Press Release Title 1 (MM/DD/YYYY)</a>
-        </li>
-        <li>
-          <a href="link-to-press-release-2.pdf" target="_blank">Press Release Title 2 (MM/DD/YYYY)</a>
-        </li>
-        <!-- Add more press releases as needed -->
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#media-assets">Media Assets</a></li>
+        <li><a href="#press-releases">Press Releases</a></li>
+        <li><a href="#team-photos">Team Photos</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </section>
+    </aside>
 
-    <!-- Media Assets Section -->
-    <section id="media-assets">
-      <h2>Media Assets</h2>
-      <p>You can download our logos and brand assets below:</p>
-      <ul>
-        <li>
-          <a href="path-to-high-resolution-logo.png" download>High Resolution Logo</a>
-        </li>
-        <li>
-          <a href="path-to-color-logo.png" download>Color Logo</a>
-        </li>
-        <!-- Add additional asset links as needed -->
-      </ul>
-      <div class="press-assets">
-        <h3>Logo Preview</h3>
-        <img src="path-to-high-resolution-logo.png" alt="[Your Organization] Logo">
-      </div>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Overview Section -->
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          Your Organization is a leading force in [industry/field]. We have been
+          recognized for [key achievements], and our mission is to [key mission
+          statement]. This press kit provides media resources and official
+          information to help journalists and industry professionals cover our
+          organization accurately and engagingly.
+        </p>
+      </section>
 
-    <!-- Media Contact Section -->
-    <section id="contact">
-      <h2>Media Contact</h2>
-      <p>If you have any questions or need further information, please reach out to our media relations team:</p>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:press@[yourorganization].com">press@[yourorganization].com</a></p>
-        <p>Phone: [Your Contact Number]</p>
-      </div>
-    </section>
+      <!-- Media Assets Section -->
+      <section id="media-assets">
+        <h2>Media Assets</h2>
+        <p>You can download our logo and other brand assets below:</p>
+        <ul>
+          <li><a href="files/high-resolution-logo.png" download>High Resolution Logo</a></li>
+          <li><a href="files/brand-guidelines.pdf" download>Brand Guidelines (PDF)</a></li>
+        </ul>
+      </section>
 
-    <!-- Footer Section -->
-    <footer>
-      <p>&copy; 2025 [Soursop Pop]. All rights reserved.</p>
-    </footer>
+      <!-- Press Releases Section -->
+      <section id="press-releases">
+        <h2>Press Releases</h2>
+        <ul>
+          <li><a href="files/press-release-01.pdf" target="_blank">Press Release Title 1 (MM/DD/YYYY)</a></li>
+          <li><a href="files/press-release-02.pdf" target="_blank">Press Release Title 2 (MM/DD/YYYY)</a></li>
+          <!-- Add more press releases as needed -->
+        </ul>
+      </section>
+
+      <!-- Team Photos / Gallery -->
+      <section id="team-photos">
+        <h2>Team Photos</h2>
+        <p>Below are some official photos of our team at events, conferences, and workshops.</p>
+        <div class="gallery">
+          <!-- Replace with your image paths -->
+          <img src="img/placeholder1.jpg" alt="Team Photo 1" />
+          <img src="img/placeholder2.jpg" alt="Team Photo 2" />
+          <img src="img/placeholder3.jpg" alt="Team Photo 3" />
+          <img src="img/placeholder4.jpg" alt="Team Photo 4" />
+          <img src="img/placeholder5.jpg" alt="Team Photo 5" />
+          <img src="img/placeholder6.jpg" alt="Team Photo 6" />
+          <!-- Add more images as needed -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          If you have any further inquiries or need additional assets,
+          please contact our media team:
+        </p>
+        <p>Email: <a href="mailto:press@yourorganization.com">press@yourorganization.com</a></p>
+        <p>Phone: +1 (555) 123-4567</p>
+      </section>
+    </main>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Your Organization. All rights reserved.</p>
+  </footer>
 </body>
 </html>
