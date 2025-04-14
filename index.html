@@ -17,12 +17,25 @@
       color: #333;
     }
     /* Header Section */
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
+   header {
+  background: url('Art/header-bg.jpg') center/cover no-repeat;
+  color: #fff;
+  padding: 100px 20px 60px; /* extra padding for large background effect */
+  text-align: center;
+  position: relative;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* optional overlay */
+  z-index: 0;
+}
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
    header img {
   max-width: 600px; /* or whatever size you want */
   width: 100%;      /* scales with container */
