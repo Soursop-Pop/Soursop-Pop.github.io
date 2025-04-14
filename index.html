@@ -124,6 +124,22 @@ header > * {
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+    .gallery video {
+  width: calc(33% - 10px);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .gallery video {
+    width: calc(50% - 10px);
+  }
+}
+@media (max-width: 480px) {
+  .gallery video {
+    width: 100%;
+  }
+}
+
     @media (max-width: 768px) {
       .gallery img {
         width: calc(50% - 10px);
