@@ -11,34 +11,38 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
       color: #333;
     }
-    /* Header Section */
-   header {
+
+    /* Header */
+    header {
       background: url('Art/promocover.png') center/cover no-repeat;
       color: #fff;
-      padding: 100px 20px 60px; /* extra padding for large background effect */
+      padding: 100px 20px 60px;
       text-align: center;
       position: relative;
     }
+
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5); /* optional overlay */
+      background-color: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
+
     header > * {
       position: relative;
       z-index: 1;
     }
-    
-       header img {
-      max-width: 600px; /* or whatever size you want */
-      width: 100%;      /* scales with container */
+
+    header img {
+      max-width: 600px;
+      width: 100%;
       height: auto;
       display: block;
       margin: 0 auto 20px auto;
@@ -46,13 +50,13 @@
 
     header h1 {
       font-size: 2.5em;
-      margin-bottom: 10px;
     }
+
     header p {
       font-size: 1.2em;
     }
-    
-    /* Container for Sidebar + Main Content */
+
+    /* Layout */
     .content-wrapper {
       display: flex;
       max-width: 1200px;
@@ -60,94 +64,103 @@
       padding: 20px;
       gap: 20px;
     }
-    
+
     /* Sidebar */
     .sidebar {
       flex: 0 0 200px;
       background-color: #fff;
       padding: 20px;
-      border-radius: 4px;
       border: 1px solid #ddd;
+      border-radius: 4px;
       height: fit-content;
     }
+
     .sidebar h2 {
       font-size: 1.2em;
       margin-bottom: 10px;
     }
+
     .sidebar ul {
       list-style: none;
       margin-top: 10px;
     }
+
     .sidebar li {
       margin-bottom: 8px;
     }
+
     .sidebar li a {
       color: #333;
       text-decoration: none;
     }
+
     .sidebar li a:hover {
       text-decoration: underline;
     }
-    
-    /* Main Content Area */
+
+    /* Main Content */
     .main-content {
       flex: 1;
       background-color: #fff;
       padding: 20px;
-      border-radius: 4px;
       border: 1px solid #ddd;
+      border-radius: 4px;
     }
+
     .main-content h2 {
       font-size: 1.8em;
       margin-bottom: 15px;
       border-bottom: 2px solid #eee;
       padding-bottom: 5px;
     }
-    .main-content p {
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
+
     .main-content h3 {
       margin-top: 30px;
       margin-bottom: 10px;
     }
-      .spacer {
-        height: 60px; /* or whatever space you want */
-      }
 
-    /* Gallery for Screenshots or Assets */
+    .main-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    /* Spacer */
+    .spacer {
+      height: 60px;
+    }
+
+    /* Trailer */
+    .trailer {
+      display: block;
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    /* Gallery */
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .gallery img {
-      cursor: zoom-in;
-      flex: 1 1 calc(33.333% - 10px); /* flexible basis, grows, wraps */
-      max-width: calc(33.333% - 10px); /* avoid overflow */
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      height: auto;
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
     }
 
-      .gallery a img {
-        cursor: zoom-in;
-         flex: 1 1 calc(33.333% - 10px); /* flexible basis, grows, wraps */
-      max-width: calc(33.333% - 10px); /* avoid overflow */
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      height: auto;
-      }
 
+    /* Allow 3 items per row on desktop */
+    .gallery img,
+    .gallery a img,
     .gallery video {
-      width: calc(33% - 10px);
+      width: calc(33.333% - 10px);
       border: 1px solid #ccc;
       border-radius: 4px;
+      height: auto;
     }
 
 
-        .download-button {
+
+    /* Download Button */
+    .download-button {
       display: inline-block;
       background-color: #222;
       color: #fff;
@@ -158,34 +171,32 @@
       margin-top: 10px;
       transition: background-color 0.3s ease;
     }
-    
+
     .download-button:hover {
       background-color: #444;
     }
 
-    @media (max-width: 768px) {
+    /* Responsive */
+        @media (max-width: 768px) {
+      .gallery img,
+      .gallery a img,
       .gallery video {
         width: calc(50% - 10px);
       }
     }
+
     @media (max-width: 480px) {
+      .gallery img,
+      .gallery a img,
       .gallery video {
         width: 100%;
       }
     }
 
-    @media (max-width: 768px) {
-      .gallery img {
-        width: calc(50% - 10px);
-      }
-    }
-    @media (max-width: 480px) {
-      .gallery img {
-        width: 100%;
-      }
-    }
-    
-    /* Footer Section */
+
+
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 20px;
@@ -193,142 +204,124 @@
       color: #fff;
       margin-top: 40px;
     }
+
     footer p {
       font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <!-- Header / Logo -->
-  <header>
-    <!-- Replace with your Soursop Pop logo file -->
-    <!--<img src="img/soursop-pop-logo.png" alt="Soursop Pop Logo" />-->
-    <h1><img src="Art/TitleText.png" alt="RhodesTrip Title" /></h1>
 
-    <p>A Game by Soursop Pop</p>
+  <!-- Header -->
+  <header>
+    <h1><img src="Art/TitleText.png" alt="RhodesTrip Title" /></h1>
+    <p>A Game by Soursop</p>
   </header>
-  
-  <!-- Two-column Layout: Sidebar and Main Content -->
+
+  <!-- Content -->
   <div class="content-wrapper">
-    <!-- Sidebar Navigation -->
+
+    <!-- Sidebar -->
     <aside class="sidebar">
       <h2>Navigate</h2>
       <ul>
         <li><a href="#overview">Overview</a></li>
         <li><a href="#media-assets">Media</a></li>
-        
         <li><a href="#screenshots">Screenshots</a></li>
         <li><a href="#download">Download Demo</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </aside>
-    
-    <!-- Main Content Area -->
+
+    <!-- Main Content -->
     <main class="main-content">
-      <!-- Overview Section -->
+
+      <!-- Overview -->
       <section id="overview">
         <h2>Overview</h2>
-        <p>
-          <strong>RhodesTrip</strong> is a third-person narrative game from <strong>Soursop Pop</strong> about driving, talking, and listening to music on a road trip back home. Meet quirky characters as you journey through beautiful biomes and reminisce about the things we miss. 
-
-        </p>
+        <p><strong>RhodesTrip</strong> is a third-person narrative game from <strong>Soursop</strong> about driving, talking, and listening to music on a road trip back home. Meet quirky characters as you journey through beautiful biomes and reminisce about the things we miss.</p>
       </section>
-      
-      <!-- Media Assets Section -->
-      <section id="media-assets">
-  <h2>Media</h2>
-
-  <h3>Prototype</h3>
-  <div class="gallery">
-    <video src="Vids/forest.mp4" controls></video>
-    <video src="Vids/mountains.mp4" controls></video>
-    <video src="Vids/desert.mp4" controls></video>
-    <video src="Vids/suburbia.mp4" controls></video>
-   <!-- <video src="Vids/prototype5.mp4" controls></video> -->
-   <!-- <video src="Vids/prototype6.mp4" controls></video> -->
-  </div>
-
-  <h3>Minigames</h3>
-  <div class="gallery">
-    <video src="Vids/engine_puzzle.mp4" controls></video>
-    <video src="Vids/snacks_minigame.mp4" controls></video>
-  </div>
-
-  <h3>UX Art Direction</h3>
-  <div class="gallery">
-    <a href ="Art/town_convo_concept.png" target="_blank">
-      <img src="Art/town_convo_concept.png" alt="UX Art 1" />
-    </a>
-    <a href ="Art/engine_repaired_concept.png" target="_blank">
-      <img src="Art/engine_repaired_concept.png" alt="UX Art 2" />
-    </a>
-  </div>
-</section>
-
-
-      <!-- Screenshots / Gallery Section -->
-  <section id="screenshots">
-       <h2>Screenshots</h2>
-       <p>
-          <!--Some in-game screenshots that showcase the breathtaking environments and memorable characters of RhodesTrip:-->
-       </p>
-       <div class="gallery">
-          <a href="Art/screenshot.png" target="_blank">
-            <img src="Art/screenshot.png" alt="Screenshot" />
-          </a>
-          <a href="Art/screenshot1.png" target="_blank">
-            <img src="Art/screenshot1.png" alt="Screenshot 1" />
-          </a>
-          <a href="Art/screenshot2.png" target="_blank">
-            <img src="Art/screenshot2.png" alt="Screenshot 2" />
-          </a>
-          <a href="Art/screenshot3.png" target="_blank">
-            <img src="Art/screenshot3.png" alt="Screenshot 3" />
-          </a>
-          <a href="Art/screenshot4.png" target="_blank">
-            <img src="Art/screenshot4.png" alt="Screenshot 4" />
-          </a>
-           <a href="Art/screenshot5.png" target="_blank">
-            <img src="Art/screenshot5.png" alt="Screenshot 5" />
-          </a>
-           <a href="Art/screenshot6.png" target="_blank">
-            <img src="Art/screenshot6.png" alt="Screenshot 6" />
-          </a>
-          <a href="Art/screenshot7.png" target="_blank">
-            <img src="Art/screenshot7.png" alt="Screenshot 7" />
-          </a>
-  
-        </div>
-      </section> 
-      <hr style="border: none; border-top: 2px solid #eee; margin: 20px 0;" />
-
-      <section id="download">
-      <h2>Download the Game</h2>
-      <p>You can download the latest build of <strong>RhodesTrip</strong> below:</p>
-      <a href="Files/RhodesTrip_Demo_v0.8.zip" download class="download-button">Download RhodesTrip (.zip)</a>
-    </section>
 
       <div class="spacer"></div>
 
+      <!-- Media -->
+      <section id="media-assets">
+        <h2>Trailer</h2>
+        <video class="trailer" src="Vids/RhodesTrip_Trailer.mp4" controls></video>
 
-      <!-- Contact Section -->
+        <h3>Prototype Screenshots</h3>
+        <div class="gallery">
+          <a href="Art/1.5screenshot.png" target="_blank"><img src="Art/1.5screenshot.png" alt="Screenshot" /></a>
+          <a href="Art/1.5screenshot1.png" target="_blank"><img src="Art/1.5screenshot1.png" alt="Screenshot 1" /></a>
+          <a href="Art/1.5screenshot2.png" target="_blank"><img src="Art/1.5screenshot2.png" alt="Screenshot 2" /></a>
+          <a href="Art/1.5screenshot3.png" target="_blank"><img src="Art/1.5screenshot3.png" alt="Screenshot 3" /></a>
+          <a href="Art/1.5screenshot4.png" target="_blank"><img src="Art/1.5screenshot4.png" alt="Screenshot 4" /></a>
+          <a href="Art/1.5screenshot5.png" target="_blank"><img src="Art/1.5screenshot5.png" alt="Screenshot 5" /></a>
+          <a href="Art/1.5screenshot6.png" target="_blank"><img src="Art/1.5screenshot6.png" alt="Screenshot 6" /></a>
+          <a href="Art/1.5screenshot7.png" target="_blank"><img src="Art/1.5screenshot7.png" alt="Screenshot 7" /></a>
+        </div>
+
+        <h3>Early Prototype</h3>
+        <div class="gallery">
+          <video src="Vids/forest.mp4" controls></video>
+          <video src="Vids/mountains.mp4" controls></video>
+          <video src="Vids/desert.mp4" controls></video>
+          <video src="Vids/suburbia.mp4" controls></video>
+        </div>
+
+        <h3>Minigame Prototypes</h3>
+        <div class="gallery">
+          <video src="Vids/engine_puzzle.mp4" controls></video>
+          <video src="Vids/snacks_minigame.mp4" controls></video>
+        </div>
+
+        <h3>UX Art Direction</h3>
+        <div class="gallery">
+          <a href="Art/town_convo_concept.png" target="_blank"><img src="Art/town_convo_concept.png" alt="UX Art 1" /></a>
+          <a href="Art/engine_repaired_concept.png" target="_blank"><img src="Art/engine_repaired_concept.png" alt="UX Art 2" /></a>
+        </div>
+      </section>
+
+      <!-- Early Screenshots -->
+      <section id="screenshots">
+        <h2>Prototype Screenshots</h2>
+        <div class="gallery">
+          <a href="Art/screenshot.png" target="_blank"><img src="Art/screenshot.png" alt="Screenshot" /></a>
+          <a href="Art/screenshot1.png" target="_blank"><img src="Art/screenshot1.png" alt="Screenshot 1" /></a>
+          <a href="Art/screenshot2.png" target="_blank"><img src="Art/screenshot2.png" alt="Screenshot 2" /></a>
+          <a href="Art/screenshot3.png" target="_blank"><img src="Art/screenshot3.png" alt="Screenshot 3" /></a>
+          <a href="Art/screenshot4.png" target="_blank"><img src="Art/screenshot4.png" alt="Screenshot 4" /></a>
+          <a href="Art/screenshot5.png" target="_blank"><img src="Art/screenshot5.png" alt="Screenshot 5" /></a>
+          <a href="Art/screenshot6.png" target="_blank"><img src="Art/screenshot6.png" alt="Screenshot 6" /></a>
+          <a href="Art/screenshot7.png" target="_blank"><img src="Art/screenshot7.png" alt="Screenshot 7" /></a>
+        </div>
+      </section>
+
+      <hr style="border: none; border-top: 2px solid #eee; margin: 20px 0;" />
+
+      <!-- Download -->
+      <section id="download">
+        <h2>Download the Game</h2>
+        <p>You can download the latest build of <strong>RhodesTrip</strong> below:</p>
+        <a href="Files/RhodesTrip_Demo_v1.5.zip" download class="download-button">Download RhodesTrip (.zip)</a>
+      </section>
+
+      <div class="spacer"></div>
+
+      <!-- Contact -->
       <section id="contact">
-        <br>
-        <br>
-        <br>
         <h2>Contact</h2>
-        <p>
-          For additional information, media inquiries, or interview requests, please contact our outreach lead at:
-        </p>
+        <p>For additional information, media inquiries, or interview requests, please contact our outreach lead at:</p>
         <p>Email: <a href="mailto:jms10299@nyu.edu">jms10299@nyu.edu</a></p>
         <p>Phone: +1 (909) 456-0467</p>
       </section>
     </main>
   </div>
-  
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 Soursop Pop. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
